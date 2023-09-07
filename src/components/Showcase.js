@@ -60,36 +60,19 @@ const Showcase = () => {
       <div className="flex items-center justify-center w-full">
         <button
           onClick={handlePrev}
-          className="self-center w-20 h-20 text-white text-8xl m-2"
+          className="self-center w-12 h-12 sm:w-20 sm:h-20 text-white text-2xl sm:text-8xl m-2"
         >
           {"<"}
         </button>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 overflow-auto">
           {carouselItems.slice(start, end).map((item, index) => (
             <div
               key={index}
-              className="w-1/3 p-4 bg-secondary-bg rounded-md"
-              style={{ overflow: "visible", position: "relative", zIndex: 0 }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.zIndex = "2";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.zIndex = "0";
-              }}
+              className="w-1/2 sm:w-1/3 p-4 bg-secondary-bg rounded-md"
             >
               <img
                 src={item.image}
                 alt={item.description}
-                style={{
-                  transition: "transform .3s ease-in-out",
-                  position: "relative",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "scale(1.25)";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
                 onClick={() => openModal(item)}
               />
               <p className="mt-2 text-center text-primary-text">
@@ -100,7 +83,7 @@ const Showcase = () => {
         </div>
         <button
           onClick={handleNext}
-          className="self-center w-20 h-20 text-white text-8xl m-2"
+          className="self-center w-12 h-12 sm:w-20 sm:h-20 text-white text-2xl sm:text-8xl m-2"
         >
           {">"}
         </button>
