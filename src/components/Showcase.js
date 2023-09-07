@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const Showcase = () => {
   const carouselItems = [
     { image: "/IMG1.jpg", description: "Description 1" },
     { image: "/IMG2.jpg", description: "Description 2" },
-    { image: "/IMG3.jpg", description: "Description 2" },
-    { image: "/IMG4.jpg", description: "Description 2" },
-    { image: "/IMG5.jpg", description: "Description 2" },
-    { image: "/IMG6.jpg", description: "Description 2" },
-    { image: "/IMG7.jpg", description: "Description 2" },
-    { image: "/IMG8.jpg", description: "Description 2" },
-    { image: "/IMG9.jpg", description: "Description 2" },
+    { image: "/IMG3.jpg", description: "Description 3" },
+    { image: "/IMG4.jpg", description: "Description 4" },
+    { image: "/IMG5.jpg", description: "Description 5" },
+    { image: "/IMG6.jpg", description: "Description 6" },
+    { image: "/IMG7.jpg", description: "Description 7" },
+    { image: "/IMG8.jpg", description: "Description 8" },
+    { image: "/IMG9.jpg", description: "Description 9" },
   ];
 
   const [start, setStart] = useState(0);
@@ -21,7 +21,7 @@ const Showcase = () => {
     description: "",
   });
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (end < carouselItems.length) {
       setStart(start + 3);
       setEnd(end + 3);
@@ -29,19 +29,19 @@ const Showcase = () => {
       setStart(0);
       setEnd(3);
     }
-  };
+  }, [start, end, carouselItems.length]);
+
+  const handlePrev = useCallback(() => {
+    if (start > 0) {
+      setStart(start - 3);
+      setEnd(end - 3);
+    }
+  }, [start, end]);
 
   useEffect(() => {
     const timer = setTimeout(handleNext, 8000);
     return () => clearTimeout(timer);
   }, [start, end, handleNext]);
-
-  const handlePrev = () => {
-    if (start > 0) {
-      setStart(start - 3);
-      setEnd(end - 3);
-    }
-  };
 
   const openModal = (item) => {
     setModalContent(item);
