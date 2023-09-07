@@ -24,7 +24,7 @@ const Showcase = () => {
   useEffect(() => {
     const timer = setTimeout(handleNext, 8000);
     return () => clearTimeout(timer);
-  }, [start, end]);
+  }, [start, end, handleNext]);
 
   const handleNext = () => {
     if (end < carouselItems.length) {
