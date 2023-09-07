@@ -21,11 +21,6 @@ const Showcase = () => {
     description: "",
   });
 
-  useEffect(() => {
-    const timer = setTimeout(handleNext, 8000);
-    return () => clearTimeout(timer);
-  }, [start, end, handleNext]);
-
   const handleNext = () => {
     if (end < carouselItems.length) {
       setStart(start + 3);
@@ -35,6 +30,11 @@ const Showcase = () => {
       setEnd(3);
     }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(handleNext, 8000);
+    return () => clearTimeout(timer);
+  }, [start, end, handleNext]);
 
   const handlePrev = () => {
     if (start > 0) {
