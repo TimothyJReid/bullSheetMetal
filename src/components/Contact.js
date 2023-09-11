@@ -31,7 +31,7 @@ const Contact = () => {
         </p>
         <div className="text-center">
           <a
-            href="mailto:info@yourcompany.com"
+            href="mailto:info@bullsheetmetal.ca"
             className="text-accent-1 text-lg underline"
           >
             info@bullsheetmetal.ca
