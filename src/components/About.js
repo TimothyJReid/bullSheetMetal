@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const About = () => {
+  const [imageSrc, setImageSrc] = useState("/Placeholder.jpg"); // Initial placeholder image
+  const [isLoading, setIsLoading] = useState(true); // To track the loading status
+
+  useEffect(() => {
+    // Function to download the image and update the state
+    const loadImage = async () => {
+      const image = new Image();
+      image.src = "/Background1.jpg";
+
+      image.onload = () => {
+        setImageSrc("/Background1.jpg");
+        setIsLoading(false); // Image has loaded
+      };
+    };
+
+    loadImage();
+  }, []);
+
   const bgStyle = {
-    backgroundImage: 'url("/Background1.jpg")',
+    backgroundImage: `url(${imageSrc})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
+    opacity: isLoading ? 0.5 : 1, // While loading, reduce opacity
+    transition: "opacity 0.5s ease",
   };
 
   return (
