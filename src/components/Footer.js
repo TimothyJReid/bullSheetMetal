@@ -9,13 +9,28 @@ const Footer = () => {
 
         {/* Social Media Icons */}
         <div className="flex justify-center space-x-4 mb-4">
-          <a href="https://www.facebook.com" className="text-accent-1">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-1"
+          >
             <FaFacebook size={24} />
           </a>
-          <a href="https://www.instagram.com" className="text-accent-2">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent-2"
+          >
             <FaInstagram size={24} />
           </a>
-          <a href="https://www.twitter.com" className="text-primary-text">
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-text"
+          >
             <FaTwitter size={24} />
           </a>
         </div>

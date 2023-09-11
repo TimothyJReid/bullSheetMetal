@@ -54,13 +54,28 @@ const Header = () => {
           </div>
 
           <div className="flex space-x-3">
-            <a href="www.facebook.com" className="text-accent-1">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-1"
+            >
               <FaFacebook />
             </a>
-            <a href="www.instagram.com" className="text-accent-2">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-2"
+            >
               <FaInstagram />
             </a>
-            <a href="www.x.com" className="text-primary-text">
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-text"
+            >
               <FaTwitter />
             </a>
           </div>
