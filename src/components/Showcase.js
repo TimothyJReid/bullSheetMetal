@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 
 const Showcase = () => {
   const carouselItems = [
-    { image: "/xmas1.jpg", description: "Description 1" },
-    { image: "/xmas2.jpg", description: "Description 1" },
-    { image: "/xmas3.jpg", description: "Description 1" },
+    { image: "/xmas1.jpg", description: "Spiral Tree" },
+    { image: "/xmas2.jpg", description: "Modern Tree" },
+    { image: "/xmas3.jpg", description: "Tree in a tree" },
     { image: "/IMG1.jpg", description: "Description 1" },
     { image: "/IMG2.jpg", description: "Description 2" },
     { image: "/IMG3.jpg", description: "Description 3" },
