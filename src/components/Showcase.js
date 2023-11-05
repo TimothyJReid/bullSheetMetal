@@ -2,15 +2,18 @@ import React, { useState, useEffect, useCallback } from "react";
 
 const Showcase = () => {
   const carouselItems = [
-    { image: "/IMG1.jpg", description: "Description 1" },
-    { image: "/IMG2.jpg", description: "Description 2" },
-    { image: "/IMG3.jpg", description: "Description 3" },
-    { image: "/IMG4.jpg", description: "Description 4" },
-    { image: "/IMG5.jpg", description: "Description 5" },
-    { image: "/IMG6.jpg", description: "Description 6" },
-    { image: "/IMG7.jpg", description: "Description 7" },
-    { image: "/IMG8.jpg", description: "Description 8" },
-    { image: "/IMG9.jpg", description: "Description 9" },
+    { image: "/xmas1.jpg", description: "Spiral Elegance" },
+    { image: "/xmas2.jpg", description: "Modern Tree" },
+    { image: "/xmas3.jpg", description: "Whimsical Silhouette" },
+    { image: "/IMG1.jpg", description: "Description 4" },
+    { image: "/IMG2.jpg", description: "Description 5" },
+    { image: "/IMG3.jpg", description: "Description 6" },
+    { image: "/IMG4.jpg", description: "Description 7" },
+    { image: "/IMG5.jpg", description: "Description 8" },
+    { image: "/IMG6.jpg", description: "Description 9" },
+    { image: "/IMG7.jpg", description: "Description 10" },
+    { image: "/IMG8.jpg", description: "Description 11" },
+    { image: "/IMG9.jpg", description: "Description 12" },
   ];
 
   const [start, setStart] = useState(0);
@@ -52,6 +55,19 @@ const Showcase = () => {
     setShowModal(false);
   };
 
+  const imageStyle = {
+    width: "100%",
+    height: "200px",
+    objectFit: "cover",
+  };
+
+  const descriptionStyle = {
+    textOverflow: "ellipsis",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    maxWidth: "100%",
+  };
+
   return (
     <div
       id="showcase"
@@ -64,18 +80,23 @@ const Showcase = () => {
         >
           {"<"}
         </button>
-        <div className="flex space-x-4 overflow-auto">
+        <div className="flex space-x-4">
           {carouselItems.slice(start, end).map((item, index) => (
             <div
               key={index}
               className="w-1/2 sm:w-1/3 p-4 bg-secondary-bg rounded-md"
+              style={{ height: "250px" }}
             >
               <img
                 src={item.image}
                 alt={item.description}
                 onClick={() => openModal(item)}
+                style={imageStyle}
               />
-              <p className="mt-2 text-center text-primary-text">
+              <p
+                className="mt-2 text-center text-primary-text"
+                style={descriptionStyle}
+              >
                 {item.description}
               </p>
             </div>
@@ -104,7 +125,7 @@ const Showcase = () => {
             <img
               src={modalContent.image}
               alt={modalContent.description}
-              style={{ maxHeight: "75%" }}
+              style={{ maxHeight: "75%", objectFit: "contain" }}
             />
             <p className="mt-2 text-center text-black">
               {modalContent.description}
